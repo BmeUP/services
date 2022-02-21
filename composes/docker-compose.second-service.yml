@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  second-service:
+    build:
+      context: ../second_service/project
+      dockerfile: Dockerfile
+    networks:
+      - composes_rabbit
+
+networks:
+  composes_rabbit:
+    external: true

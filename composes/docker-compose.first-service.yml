@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  first-service:
+    build:
+      context: ../first_service/project
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - composes_rabbit
+
+networks:
+  composes_rabbit:
+    external: true
